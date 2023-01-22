@@ -1,6 +1,6 @@
 ## Specification Document
-**Project Language:** English (I can do peer reviews also in Finnish.)
-**Programming Language:** Python
+**Project Language:** English (I can do peer reviews also in Finnish.)  
+**Programming Language:** Python  
 **Study Program:** Tietojenkäsittelytieteen kandidaatti
 
 ### Topic
