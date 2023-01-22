@@ -1,6 +1,6 @@
 ## Specification Document
-**Project Language:** English (I can do peer reviews also in Finnish.)
-**Programming Language:** Python
+**Project Language:** English (I can do peer reviews also in Finnish.)  
+**Programming Language:** Python  
 **Study Program:** Tietojenkäsittelytieteen kandidaatti
 
 ### Topic
@@ -13,6 +13,6 @@ The application uses a Markov algorithm chain to create new content. Input data 
 The time complexity is O(n) where n is the number of items in the chain. The same O(n) is also the space complexity.
 
 ### Sources
-[Markov Chain](https://www.youtube.com/watch?v=eGFJ8vugIWA)
-[Musical Markov Chain](https://www.youtube.com/watch?v=0kMSp8Deamk&t=91s)
+[Markov Chain](https://www.youtube.com/watch?v=eGFJ8vugIWA)  
+[Musical Markov Chain](https://www.youtube.com/watch?v=0kMSp8Deamk&t=91s)  
 [Trie](https://www.youtube.com/watch?v=AXjmTQ8LEoI)
