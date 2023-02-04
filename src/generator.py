@@ -1,15 +1,24 @@
 from random import choices
 from converter import Converter
 
+
 class Generator:
+    """Generates a new melody based on the reference music.
+    """
+
     def __init__(self, trie):
+        """The constructor.
+        
+        Args:
+            trie: Trie object that contains trie data structure.
+        """
         self.trie = trie
         self.converter = Converter()
         self.convert = self.converter.convert_list_2
 
     def calculate(self, notes, frequencies):
         """Draws a note from the given options.
-        
+
         Args:
             notes: A list of notes.
             frequencies: A list of frequencies of the notes.
@@ -17,9 +26,9 @@ class Generator:
         Returns:
             A note that got picked.
         """
-        next = choices(notes, weights=frequencies, k=1)
-        return next
-    
+        follower = choices(notes, weights=frequencies, k=1)
+        return follower
+
     def generate(self, length):
         """Generates a new melody based on the values stored in trie.
 
@@ -34,15 +43,15 @@ class Generator:
             lists = self.trie.next(previous)
             if lists == []:
                 return 'Error'
-            n = self.calculate(lists[0], lists[1])
-            previous.append(n[0])
-            melody.append(self.convert[n[0]])
+            follower = self.calculate(lists[0], lists[1])
+            previous.append(follower[0])
+            melody.append(self.convert[follower[0]])
         for i in range(length):
             lists = self.trie.next(previous)
             if lists == []:
                 return 'Error'
-            n = self.calculate(lists[0], lists[1])
+            follower = self.calculate(lists[0], lists[1])
             previous.pop(0)
-            previous.append(n[0])
-            melody.append(self.convert[n[0]])
+            previous.append(follower[0])
+            melody.append(self.convert[follower[0]])
         return melody

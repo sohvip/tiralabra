@@ -2,8 +2,14 @@ from converter import Converter
 from trie import Trie
 from generator import Generator
 
+
 class Run:
+    """Takes care of running the generator.
+    """
+
     def __init__(self):
+        """The constructor.
+        """
         self.converter = Converter()
         self.trie = Trie()
 
@@ -17,15 +23,16 @@ class Run:
         generator = Generator(self.trie)
         output = generator.generate(100)
         print(output)
-    
+
     def again(self):
-        answer = input('Press enter to generate another one or q for exiting ')
+        """Allows user to start the generating process again.
+        """
+        answer = input('Press enter to generate another one or q for exit ')
         if answer == 'q':
             return False
-        else:
-            self.start()
-            return True
-    
+        self.start()
+        return True
+
     def store(self, melody):
         """Calls the function that inserts notes to trie.
 
