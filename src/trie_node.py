@@ -9,5 +9,6 @@ class TrieNode:
             note: A note from the reference music.
         """
         self.note = note
-        self.counter = 0
+        self.frequency = 0
         self.children = {}
+        self.is_terminal = False
