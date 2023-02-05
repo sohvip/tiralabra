@@ -6,15 +6,34 @@ class TestTrie(unittest.TestCase):
     def setUp(self):
         self.trie = Trie()
 
-    def test_insert_to_trie(self):
-        self.trie.insert_to_trie(['a', 'b', 'c'])
-        self.assertEqual(self.trie.root.children[1].note, 1)
+    def test_insert(self):
+        self.trie.insert([(13,'a'), (15,'b'), (16,'c')])
+        self.assertEqual(self.trie.root.children[13].note, 'a')
+        self.assertEqual(self.trie.root.children[13].is_terminal, False)
+        node = self.trie.root.children[13]
+        self.assertEqual(node.children[15].note, 'b')
+        self.assertEqual(node.children[15].is_terminal, False)
+        node = node.children[15]
+        self.assertEqual(node.children[16].note, 'c')
+        self.assertEqual(node.children[16].is_terminal, True)
 
-    def test_char_to_int(self):
-        list = self.trie.char_to_int(['a', 'b', 'c'])
-        self.assertEqual(list, [1, 3, 4])
-
-    def test_no_melody(self):
-        self.trie.insert_to_trie(['a', 'b', 'c'])
-        melody = self.trie.compose(['a#', 'b'])
-        self.assertEqual(melody, 'Try another sequence')
+    def test_next_with_empty_sequence(self):
+        self.trie.insert([(13,'a')])
+        self.trie.insert([(13,'a')])
+        possibilities = self.trie.next([])
+        self.assertEqual(possibilities, ([13],[2]))
+    
+    def test_next_with_sequence(self):
+        self.trie.insert([(13,'a'), (15,'b'), (16,'c')])
+        self.trie.insert([(13,'a'), (12,'G#'), (11,'G')])
+        possibilities = self.trie.next([13,12])
+        self.assertEqual(possibilities, ([11],[1]))
+    
+    def test_next_with_impossible_sequence(self):
+        self.trie.insert([(13,'a'), (15,'b'), (16,'c')])
+        self.trie.insert([(13,'a'), (12,'G#'), (11,'G')])
+        possibilities = self.trie.next([13,11])
+        self.assertEqual(possibilities, [])
+    
+    def test_root(self):
+        self.assertEqual(self.trie.root.note, '')

@@ -12,14 +12,14 @@ class Converter:
         self.convert_list_2 = dict([(value, key)
                                    for key, value in self.convert_list.items()])
 
-    def read_file(self):
+    def read_file(self, reference='music/reference.txt'):
         """Reads the reference.txt file that stores the reference data.
 
         Returns:
             A call to another method that converts the reference data to a usable form.
         """
         raw_list = []
-        with open('reference.txt', 'r') as file:
+        with open(reference, 'r') as file:
             music_2 = file.read()
             for i in range(len(music_2)):
                 if music_2[i] == '#':
@@ -31,12 +31,8 @@ class Converter:
             return self.char_to_int(raw_list)
 
     def char_to_int(self, notes):
-        """Converts notes to numbers:
-            a -> 1
-            a# -> 2
-            b -> 3
-            ...
-            g# -> 12
+        """Converts notes to tuples that contain the number corresponding
+        to the note and the name of the note itself.
 
         Args:
             notes: List of notes.

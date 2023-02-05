@@ -39,9 +39,7 @@ class Trie:
         frequencies = []
         node = self.root
         for note in sequence:
-            if note == '':
-                pass
-            elif note in node.children:
+            if note in node.children:
                 node = node.children[note]
             else:
                 return []
