@@ -8,7 +8,7 @@ class Generator:
 
     def __init__(self, trie):
         """The constructor.
-        
+
         Args:
             trie: Trie object that contains trie data structure.
         """

@@ -14,7 +14,7 @@ class Trie:
         """Insert sequence of notes to trie.
 
         Args:
-            sequence: List of tuples with the following structure: 
+            sequence: List of tuples with the following structure:
             (note's number, note's name).
         """
         node = self.root
