@@ -1,5 +1,6 @@
 # Music Generator
-![GHA workflow badge](https://github.com/sohvip/tiralabra/workflows/CI/badge.svg)  
+![GHA workflow badge](https://github.com/sohvip/tiralabra/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/github/sohvip/tiralabra/branch/main/graph/badge.svg?token=RO1L6GH33V)](https://codecov.io/github/sohvip/tiralabra)  
 Composes new melodies based on the given reference music.
 ## Weekly Reports
 [1st Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_1.md)  
