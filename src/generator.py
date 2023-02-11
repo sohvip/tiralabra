@@ -29,26 +29,28 @@ class Generator:
         follower = choices(notes, weights=frequencies, k=1)
         return follower
 
-    def generate(self, length):
+    def generate(self, length, order):
         """Generates a new melody based on the values stored in trie.
 
         Args:
             length: Wanted length of the generated melody.
+            order: Order of the Markov Chain.
+
         Returns:
             New melody in a form of list.
         """
         previous = []
         melody = []
-        for i in range(2):
+        for i in range(order):
             lists = self.trie.next(previous)
-            if lists == []:
+            if [] in lists:
                 return 'Error'
             follower = self.calculate(lists[0], lists[1])
             previous.append(follower[0])
             melody.append(self.convert[follower[0]])
-        for i in range(length):
+        for i in range(length-order):
             lists = self.trie.next(previous)
-            if lists == []:
+            if [] in lists:
                 return 'Error'
             follower = self.calculate(lists[0], lists[1])
             previous.pop(0)

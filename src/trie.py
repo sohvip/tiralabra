@@ -45,7 +45,29 @@ class Trie:
                 return []
 
         for child in node.children:
+            # if not child:
+            #     return []
             notes.append(child)
             frequencies.append(node.children[child].frequency)
 
         return notes, frequencies
+    
+    def search(self, sequences):
+        """Searches if the given sequences are in the trie.
+
+        Args:
+            sequences: A list of sequences.
+
+        Returns:
+            True if all the sequences can be found, False otherwise.
+        """
+        for sequence in sequences:
+            node = self.root
+            for note in sequence:
+                if note in node.children:
+                    node = node.children[note]
+                else:
+                    return False
+        return True
+
+

@@ -17,11 +17,14 @@ class Run:
         """Allows user to start the generating process.
         """
         print('Welcome to Music Generator')
+        order = int(input('Markov Chain Order: '))
+        length = int(input('Length of the melody: '))
         input('Press enter to start generating :) ')
-        note_seq = self.converter.read_file()
+        notes = self.converter.read_file()
+        note_seq = self.converter.sequence_maker(notes, order)
         self.store(note_seq)
         generator = Generator(self.trie)
-        output = generator.generate(100)
+        output = generator.generate(length, order)
         print(output)
 
     def again(self):

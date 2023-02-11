@@ -38,23 +38,41 @@ class Converter:
             notes: List of notes.
 
         Returns:
-            A call to a method that makes three note long sequences.
+            The converted list.
         """
         for i in range(len(notes)):
             notes[i] = (self.convert_list[notes[i]], notes[i])
 
-        return self.sequence_maker(notes)
+        return notes
 
-    def sequence_maker(self, melody):
-        """Makes three note long sequences out of the given melody.
+    def char_to_int_2(self, notes):
+        """Converts notes to the numbers corresponding to the notes.
+        (This method is for test use only.)
+        Args:
+            notes: List of notes.
+
+        Returns:
+            The converted list.
+        """
+        for i in range(len(notes)):
+            notes[i] = self.convert_list[notes[i]]
+
+        return notes
+
+    def sequence_maker(self, melody, order):
+        """Makes certain length sequences out of the given melody.
 
         Args:
             melody: A sequence of notes.
+            order: Order of the Markov Chain. 
+                (determines how long sequences are needed)
 
         Returns:
-            Three notes long sequences in a list.
+            Note sequences in a list.
         """
         sequences = []
-        for i in range(len(melody)-2):
-            sequences.append([melody[i], melody[i+1], melody[i+2]])
+        for i in range(len(melody)-order):
+            sequences.append([melody[i]])
+            for j in range(1, order+1):
+                sequences[i].append(melody[i+j])
         return sequences

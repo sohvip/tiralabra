@@ -37,3 +37,17 @@ class TestTrie(unittest.TestCase):
     
     def test_root(self):
         self.assertEqual(self.trie.root.note, '')
+    
+    def test_search(self):
+        self.trie.insert([(13,'a'), (15,'b'), (16,'c')])
+        self.assertEqual(self.trie.search([[13,15,17]]), False)
+    
+    def test_search_2(self):
+        self.trie.insert([(13,'a'), (15,'b'), (16,'c')])
+        self.trie.insert([(13,'a'), (15,'b'), (16,'c'), (13,'a'), (15,'b'), (16,'c')])
+        self.trie.insert([(13,'a'), (12,'G#'), (11,'G')])
+        self.trie.insert([(13,'a'), (14,'a#'), (16,'c')])
+        self.assertEqual(self.trie.search([[13,12,11]]), True)
+        self.assertEqual(self.trie.search([[13,15,16,13]]), True)
+        self.assertEqual(self.trie.search([[13]]), True)
+
