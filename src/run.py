@@ -1,6 +1,7 @@
 from converter import Converter
 from trie import Trie
 from generator import Generator
+from lilypond import Lilypond
 
 
 class Run:
@@ -12,6 +13,7 @@ class Run:
         """
         self.converter = Converter()
         self.trie = Trie()
+        self.lilypond = Lilypond()
 
     def start(self):
         """Allows user to start the generating process.
@@ -26,6 +28,8 @@ class Run:
         generator = Generator(self.trie)
         output = generator.generate(length, order)
         print(output)
+        if output != 'Error':
+            self.lilypond.write(output)
 
     def again(self):
         """Allows user to start the generating process again.

@@ -52,6 +52,8 @@ class Generator:
             lists = self.trie.next(previous)
             if [] in lists:
                 return 'Error'
+            elif len(lists)<=1:
+                return 'Error'
             follower = self.calculate(lists[0], lists[1])
             previous.pop(0)
             previous.append(follower[0])
