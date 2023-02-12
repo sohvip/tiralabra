@@ -1,6 +1,6 @@
 # Testing Document
 
-For now, the program only has some unit testing that has been implemented with Python's unittest module.
+The program is tested with unit testing that has been implemented using Python's unittest module.
 
 ## Unit Testing
 
@@ -9,7 +9,7 @@ For now, the program only has some unit testing that has been implemented with P
 Tested class: `Trie`  
   
 What it tests: 
-- note sequences are stored correctly to the trie
+- sequences that have been stored to the trie can be found
 - calculating next possible note from a sequence gives correct options
      
 **`TestTrieNode`**
@@ -24,7 +24,22 @@ What it tests:
 Tested class: `Converter`  
   
 What it tests:
-- when a file that contains reference music is read, the converter gives valid three note sequences based on the file's content
+- when a file that contains reference music is read, the converter outputs correct information
+- right-sized sequences are made out of the given music
+
+**`TestGenerator`**  
+  
+Tested class: `Generator`  
+  
+What it tests:
+- generating process leads to error when there are no possible melodies that could be generated
+
+**`TestRun`**  
+  
+Tested class: `Generator`, `Run`
+  
+What it tests:
+- when a new melody is generated, all three-sized (because the test generates with 2nd order Markov chain) sequences can be found from the trie
   
 ## Test coverage
-![Screenshot from 2023-02-05 18-14-32](https://user-images.githubusercontent.com/95978191/216831203-deaf817e-05a0-4b89-aa8d-69e4a086552e.png)
+![image](https://user-images.githubusercontent.com/95978191/218305292-14cc6a5f-d028-479d-bfae-1ba84c9ded22.png)
