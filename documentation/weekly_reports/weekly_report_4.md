@@ -4,4 +4,4 @@ I improved the algorithm so that it is now possible to generate melodies using a
 **Question of the week:**  
 - Is the algorithm now working as intended or do I still need to modify it?
 
-**Time Spent:** 6
+**Time Spent:** 6 hours
