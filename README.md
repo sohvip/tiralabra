@@ -7,4 +7,28 @@ Composes new melodies based on the given reference music.
 [2nd Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_2.md)  
 [3rd Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_3.md)  
 [4th Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_4.md)  
-[5th Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_5.md)  
+[5th Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_5.md) 
+## Commands
+**Install:**  
+```bash
+poetry install
+```  
+**Starting the Program:**  
+```bash
+poetry run invoke start
+```  
+**Testing:**  
+```bash
+poetry run invoke pytest
+```  
+**Coverage Report:**  
+```bash
+poetry run invoke coverage-report
+```  
+**Pylint:**  
+```bash
+poetry run invoke pylint
+```  
+
+
+
