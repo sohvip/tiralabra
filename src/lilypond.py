@@ -1,5 +1,6 @@
 from music_path import LILYPOND_FILE_PATH
 
+
 class Lilypond:
     """Creates a lilypond-readable file out of the generated music.
     """
@@ -9,10 +10,10 @@ class Lilypond:
         """
 
         self.notation = {'A': 'a', 'A#': 'ais', 'B': 'b', 'C': "c'", 'C#': "cis'",
-                             'D': "d'", 'D#': "dis'", 'E': "e'", 'F': "f'", 'F#': "fis'", 'G': "g'", 'G#': "gis'",
-                             'a': "a'", 'a#': "ais'", 'b': "b'", 'c': "c''", 'c#': "cis''", 'd': "d''",
-                             'd#': "dis''", 'e': "e''", 'f': "f''", 'f#': "fis''", 'g': "g''", 'g#': "g''"}
-        
+                         'D': "d'", 'D#': "dis'", 'E': "e'", 'F': "f'", 'F#': "fis'", 'G': "g'", 'G#': "gis'",
+                         'a': "a'", 'a#': "ais'", 'b': "b'", 'c': "c''", 'c#': "cis''", 'd': "d''",
+                         'd#': "dis''", 'e': "e''", 'f': "f''", 'f#': "fis''", 'g': "g''", 'g#': "g''"}
+
     def write(self, melody):
         """Writes the melody to to a file in a lilypond syntax.
 
@@ -46,7 +47,7 @@ class Lilypond:
             file.write(f'{midi}\n')
             file.write('}')
             file.close()
-    
+
     def convert(self, melody):
         """Converts melody to lilypond-notation.
 
@@ -60,6 +61,7 @@ class Lilypond:
             melody[i] = self.notation[melody[i]]
         return melody
 
+
 if __name__ == "__main__":
     lilypond = Lilypond()
-    lilypond.write(['a#', 'b', 'c']) 
+    lilypond.write(['a#', 'b', 'c'])

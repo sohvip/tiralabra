@@ -1,5 +1,6 @@
 from music_path import REFERENCE_FILE_PATH
 
+
 class Converter:
     """Converts the reference music to a form that can be inserted to the data structure.
     """

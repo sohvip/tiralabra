@@ -7,7 +7,7 @@ from music_path import REFERENCE_FILE_PATH
 class TestRun(unittest.TestCase):
     def setUp(self):
         self.run = Run()
-    
+
     def test_generating(self):
         sequences = self.run.converter.read_file(REFERENCE_FILE_PATH)
         note_seq = self.run.converter.sequence_maker(sequences, 2)

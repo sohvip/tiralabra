@@ -51,7 +51,7 @@ class Trie:
             frequencies.append(node.children[child].frequency)
 
         return notes, frequencies
-    
+
     def search(self, sequences):
         """Searches if the given sequences are in the trie.
 
@@ -69,5 +69,3 @@ class Trie:
                 else:
                     return False
         return True
-
-
