@@ -1,3 +1,5 @@
+from music_path import LILYPOND_FILE_PATH
+
 class Lilypond:
     """Creates a lilypond-readable file out of the generated music.
     """
@@ -19,14 +21,30 @@ class Lilypond:
         """
 
         melody = self.convert(melody)
-        with open('music/lilypond.ly', 'w') as file:
+        with open(LILYPOND_FILE_PATH, 'w') as file:
             version = 'version "2.24.1"\n'
             version = version.replace('version', '\\version')
+            score = 'score {'
+            score = score.replace('score', '\\score')
+            music = 'music'
+            music = music.replace('music', '\\music')
+            layout = 'layout {}'
+            layout = layout.replace('layout', '\\layout')
+            tempo = '{ tempo 4 = 200 }'
+            tempo = tempo.replace('tempo', '\\tempo')
+            midi = f'midi {tempo}'
+            midi = midi.replace('midi', '\\midi')
             file.write(version)
+            file.write('music = ')
             file.write('{\n')
             for note in melody:
-                file.write(f"{note} ")
-            file.write('\n}')
+                file.write(f'{note} ')
+            file.write('\n}\n')
+            file.write(f'{score}\n')
+            file.write(f'{music}\n')
+            file.write(f'{layout}\n')
+            file.write(f'{midi}\n')
+            file.write('}')
             file.close()
     
     def convert(self, melody):
@@ -44,4 +62,4 @@ class Lilypond:
 
 if __name__ == "__main__":
     lilypond = Lilypond()
-    lilypond.write(['a#', 'b', 'c'])
+    lilypond.write(['a#', 'b', 'c']) 

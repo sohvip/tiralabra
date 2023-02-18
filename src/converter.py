@@ -1,3 +1,5 @@
+from music_path import REFERENCE_FILE_PATH
+
 class Converter:
     """Converts the reference music to a form that can be inserted to the data structure.
     """
@@ -12,7 +14,7 @@ class Converter:
         self.convert_list_2 = dict([(value, key)
                                    for key, value in self.convert_list.items()])
 
-    def read_file(self, reference='music/reference.txt'):
+    def read_file(self, reference=REFERENCE_FILE_PATH):
         """Reads the reference.txt file that stores the reference data.
 
         Returns:
