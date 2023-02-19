@@ -2,7 +2,7 @@ import unittest
 from lilypond import Lilypond
 
 
-class TestRun(unittest.TestCase):
+class TestLilypond(unittest.TestCase):
     def setUp(self):
         self.lilypond = Lilypond()
     
