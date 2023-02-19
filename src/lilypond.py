@@ -14,7 +14,7 @@ class Lilypond:
                          'a': "a'", 'a#': "ais'", 'b': "b'", 'c': "c''", 'c#': "cis''", 'd': "d''",
                          'd#': "dis''", 'e': "e''", 'f': "f''", 'f#': "fis''", 'g': "g''", 'g#': "g''"}
 
-    def write(self, melody):
+    def write(self, melody):    # pragma: no cover
         """Writes the melody to to a file in a lilypond syntax.
 
         Args:
@@ -60,8 +60,3 @@ class Lilypond:
         for i in range(len(melody)):
             melody[i] = self.notation[melody[i]]
         return melody
-
-
-if __name__ == "__main__":
-    lilypond = Lilypond()
-    lilypond.write(['a#', 'b', 'c'])

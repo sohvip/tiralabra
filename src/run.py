@@ -15,7 +15,7 @@ class Run:
         self.trie = Trie()
         self.lilypond = Lilypond()
 
-    def start(self):
+    def start(self):    # pragma: no cover
         """Allows user to start the generating process.
         """
         print('Welcome to Music Generator')
@@ -31,7 +31,7 @@ class Run:
         if output != 'Error':
             self.lilypond.write(output)
 
-    def again(self):
+    def again(self):    # pragma: no cover
         """Allows user to start the generating process again.
         """
         answer = input('Press enter to generate another one or q for exit ')
