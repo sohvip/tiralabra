@@ -2,8 +2,11 @@ import os
 
 dirname = os.path.dirname(__file__)
 
-REFERENCE_FILENAME = 'reference.txt'
-REFERENCE_FILE_PATH = os.path.join(dirname, 'music', REFERENCE_FILENAME)
+BOTW_FILENAME = 'botw.txt'
+BOTW_FILE_PATH = os.path.join(dirname, 'music', BOTW_FILENAME)
+
+AUTUMN_FILENAME = 'autumn_mountain.txt'
+AUTUMN_FILE_PATH = os.path.join(dirname, 'music', AUTUMN_FILENAME)
 
 TEST_FILENAME = 'test_piece.txt'
 TEST_FILE_PATH = os.path.join(dirname, 'music', TEST_FILENAME)

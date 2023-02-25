@@ -2,6 +2,8 @@ from converter import Converter
 from trie import Trie
 from generator import Generator
 from lilypond import Lilypond
+from music_path import BOTW_FILE_PATH, AUTUMN_FILE_PATH
+
 
 
 class Run:
@@ -15,30 +17,69 @@ class Run:
         self.trie = Trie()
         self.lilypond = Lilypond()
 
-    def start(self):    # pragma: no cover
+    def start(self, start=True, song=0):    # pragma: no cover
         """Allows user to start the generating process.
+        
+        Args: 
+            start: True if it is the first time that the function is called,
+            otherwise False.
         """
-        print('Welcome to Music Generator')
-        order = int(input('Markov Chain Order: '))
-        length = int(input('Length of the melody: '))
-        input('Press enter to start generating :) ')
-        notes = self.converter.read_file()
+        if start:
+            print()
+            print('welcome to MUSIC GENERATOR')
+            print()
+            print('[1] breath of the wild main theme')
+            print('[2] autumn mountain')
+            print()
+            song = 0
+            while song not in [1, 2]:          
+                try:
+                    song = int(input('choose a song for reference: '))
+                except:
+                    pass
+        print()
+        order = 0
+        while order < 1:
+            try:
+                order = int(input('markov chain order: '))
+            except:
+                pass
+        print()
+        length = 0
+        while length < order:
+            try:
+                length = int(input('length of the melody: '))
+            except:
+                pass
+        print()
+        input('press enter to GENERATE ')
+        print()
+        if song == 1:
+            notes = self.converter.read_file(BOTW_FILE_PATH)
+        else:
+            notes = self.converter.read_file(AUTUMN_FILE_PATH)
         note_seq = self.converter.sequence_maker(notes, order)
         self.store(note_seq)
         generator = Generator(self.trie)
         output = generator.generate(length, order)
-        print(output)
-        if output != 'Error':
+        if output != 'error':
+            print('melody saved as lilypond.ly')
+            print()
             self.lilypond.write(output)
+        else:
+            print(output)
+            print()
+        return song
 
-    def again(self):    # pragma: no cover
+    def again(self, song):    # pragma: no cover
         """Allows user to start the generating process again.
         """
-        answer = input('Press enter to generate another one or q for exit ')
-        if answer == 'q':
-            return False
-        self.start()
-        return True
+        answer = input('generate again? y/n ')
+        print()
+        if answer in ['y', 'Y', 'yes', 'Yes', 'YES']:
+            self.start(False, song)
+            return True
+        return False
 
     def store(self, melody):
         """Calls the function that inserts notes to trie.

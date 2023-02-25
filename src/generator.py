@@ -44,16 +44,16 @@ class Generator:
         for i in range(order):
             lists = self.trie.next(previous)
             if [] in lists:
-                return 'Error'
+                return 'error'
             follower = self.calculate(lists[0], lists[1])
             previous.append(follower[0])
             melody.append(self.convert[follower[0]])
         for i in range(length-order):
             lists = self.trie.next(previous)
             if [] in lists:
-                return 'Error'
+                return 'error'
             elif len(lists) <= 1:   # pragma: no cover
-                return 'Error'
+                return 'error'
             follower = self.calculate(lists[0], lists[1])
             previous.pop(0)
             previous.append(follower[0])

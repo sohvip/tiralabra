@@ -5,10 +5,10 @@ def main():
     """Starts the application.
     """
     run = Run()
-    run.start()
+    song = run.start()
     retry = True
     while retry is True:
-        retry = run.again()
+        retry = run.again(song)
 
 
 if __name__ == "__main__":
