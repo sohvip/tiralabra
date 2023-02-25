@@ -8,7 +8,8 @@ Composes new melodies based on the given reference music.
 [2nd Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_2.md)  
 [3rd Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_3.md)  
 [4th Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_4.md)  
-[5th Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_5.md) 
+[5th Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_5.md)  
+[6th Week](https://github.com/sohvip/tiralabra/blob/main/documentation/weekly_reports/weekly_report_6.md)
 ## Commands
 **Install:**  
 ```bash
