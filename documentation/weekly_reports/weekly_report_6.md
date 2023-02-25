@@ -1,7 +1,4 @@
 # Weekly Report 6
-Coming soon...
+I made some improvements to the user interface and also made a more clear user guide for the application. I also added another reference song and made it possible for the user to choose which song to use.
 
-**Question of the week:**  
-Coming soon...
-
-**Time Spent:** ?
+**Time Spent:** 3
