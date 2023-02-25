@@ -52,7 +52,7 @@ class Generator:
             lists = self.trie.next(previous)
             if [] in lists:
                 return 'error'
-            elif len(lists) <= 1:   # pragma: no cover
+            if len(lists) <= 1:   # pragma: no cover
                 return 'error'
             follower = self.calculate(lists[0], lists[1])
             previous.pop(0)

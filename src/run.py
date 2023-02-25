@@ -23,6 +23,10 @@ class Run:
         Args: 
             start: True if it is the first time that the function is called,
             otherwise False.
+            song: Number of the song the user wants to use as a reference.
+        
+        Returns:
+            song: Number of the song the user has chosen.
         """
         if start:
             print()
@@ -32,7 +36,7 @@ class Run:
             print('[2] autumn mountain')
             print()
             song = 0
-            while song not in [1, 2]:          
+            while song not in [1, 2]:
                 try:
                     song = int(input('choose a song for reference: '))
                 except:
@@ -73,6 +77,9 @@ class Run:
 
     def again(self, song):    # pragma: no cover
         """Allows user to start the generating process again.
+
+        Args:
+            song: Number of the song the user has chosen.
         """
         answer = input('generate again? y/n ')
         print()

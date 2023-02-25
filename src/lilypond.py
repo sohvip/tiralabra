@@ -10,9 +10,10 @@ class Lilypond:
         """
 
         self.notation = {'A': 'a', 'A#': 'ais', 'B': 'b', 'C': "c'", 'C#': "cis'",
-                         'D': "d'", 'D#': "dis'", 'E': "e'", 'F': "f'", 'F#': "fis'", 'G': "g'", 'G#': "gis'",
-                         'a': "a'", 'a#': "ais'", 'b': "b'", 'c': "c''", 'c#': "cis''", 'd': "d''",
-                         'd#': "dis''", 'e': "e''", 'f': "f''", 'f#': "fis''", 'g': "g''", 'g#': "g''"}
+                         'D': "d'", 'D#': "dis'", 'E': "e'", 'F': "f'", 'F#': "fis'",
+                         'G': "g'", 'G#': "gis'", 'a': "a'", 'a#': "ais'", 'b': "b'",
+                         'c': "c''", 'c#': "cis''", 'd': "d''", 'd#': "dis''", 'e': "e''",
+                         'f': "f''", 'f#': "fis''", 'g': "g''", 'g#': "g''"}
 
     def write(self, melody):    # pragma: no cover
         """Writes the melody to to a file in a lilypond syntax.
