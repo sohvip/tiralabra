@@ -7,7 +7,9 @@ Searching and inserting algorithms in the trie data structure have the time comp
 The space complexity is also O(n).
 
 ### Suggestions For Improvement
-Coming soon...
+- user can input their own reference music in predefined format
+- polyphonic generating
+- different note durations in generated music
 
 ### Sources
 [Trie (Wikipedia)](https://en.wikipedia.org/wiki/Trie)
