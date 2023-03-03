@@ -64,7 +64,7 @@ class Converter:
 
         Args:
             melody: A sequence of notes.
-            order: Order of the Markov Chain. 
+            order: Order of the Markov Chain.
                 (determines how long sequences are needed)
 
         Returns:

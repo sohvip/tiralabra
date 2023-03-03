@@ -1,0 +1,6 @@
+[MASTER]
+
+ignore=tests
+
+disable=
+    C0114 #missing-module-docstring

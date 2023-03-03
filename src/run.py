@@ -19,12 +19,12 @@ class Run:
 
     def start(self, start=True, song=0):    # pragma: no cover
         """Allows user to start the generating process.
-        
-        Args: 
+
+        Args:
             start: True if it is the first time that the function is called,
             otherwise False.
             song: Number of the song the user wants to use as a reference.
-        
+
         Returns:
             song: Number of the song the user has chosen.
         """
@@ -71,7 +71,7 @@ class Run:
             print()
             self.lilypond.write(output)
         else:
-            print(output)
+            print('Generating melody failed. Try again or change the parameters.')
             print()
         return song
 
