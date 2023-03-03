@@ -1,5 +1,5 @@
 # User Manual
-- start the program with `invoke start`
+- start the program with `poetry run invoke start`
 - input the number of the song you want to use
 - give the order of the Markov chain and the length of the melody (i.e. how many notes will be generated)
 - press enter and wait for the program to generate some music
