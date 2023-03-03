@@ -41,14 +41,14 @@ class Generator:
         """
         previous = []
         melody = []
-        for i in range(order):
+        for _ in range(order):
             lists = self.trie.next(previous)
             if [] in lists:
                 return 'error'
             follower = self.calculate(lists[0], lists[1])
             previous.append(follower[0])
             melody.append(self.convert[follower[0]])
-        for i in range(length-order):
+        for _ in range(length-order):
             lists = self.trie.next(previous)
             if [] in lists:
                 return 'error'

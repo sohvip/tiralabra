@@ -18,10 +18,10 @@ class Trie:
             (note's number, note's name).
         """
         node = self.root
-        for i in range(len(sequence)):
-            if sequence[i][0] not in node.children:
-                node.children[sequence[i][0]] = TrieNode(sequence[i][1])
-            node = node.children[sequence[i][0]]
+        for _, notes in enumerate(sequence):
+            if notes[0] not in node.children:
+                node.children[notes[0]] = TrieNode(notes[1])
+            node = node.children[notes[0]]
             node.frequency += 1
         node.is_terminal = True
 

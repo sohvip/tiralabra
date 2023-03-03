@@ -9,8 +9,7 @@ class Converter:
                              'D': 6, 'D#': 7, 'E': 8, 'F': 9, 'F#': 10, 'G': 11, 'G#': 12,
                              'a': 13, 'a#': 14, 'b': 15, 'c': 16, 'c#': 17, 'd': 18,
                              'd#': 19, 'e': 20, 'f': 21, 'f#': 22, 'g': 23, 'g#': 24}
-        self.convert_list_2 = dict([(value, key)
-                                   for key, value in self.convert_list.items()])
+        self.convert_list_2 = {value: key for key, value in self.convert_list.items()}
 
     def read_file(self, reference):
         """Reads the reference.txt file that stores the reference data.
@@ -19,14 +18,14 @@ class Converter:
             A call to another method that converts the reference data to a usable form.
         """
         raw_list = []
-        with open(reference, 'r') as file:
+        with open(reference, 'r', encoding='utf-8') as file:
             music_2 = file.read()
-            for i in range(len(music_2)):
-                if music_2[i] == '#':
+            for i, note in enumerate(music_2):
+                if note == '#':
                     raw_list.pop()
                     raw_list.append(f'{music_2[i-1]}#')
                 else:
-                    raw_list.append(music_2[i])
+                    raw_list.append(note)
             file.close()
             return self.char_to_int(raw_list)
 
@@ -40,8 +39,8 @@ class Converter:
         Returns:
             The converted list.
         """
-        for i in range(len(notes)):
-            notes[i] = (self.convert_list[notes[i]], notes[i])
+        for i, note in enumerate(notes):
+            notes[i] = (self.convert_list[note], note)
 
         return notes
 
@@ -54,8 +53,8 @@ class Converter:
         Returns:
             The converted list.
         """
-        for i in range(len(notes)):
-            notes[i] = self.convert_list[notes[i]]
+        for i, note in enumerate(notes):
+            notes[i] = self.convert_list[note]
 
         return notes
 

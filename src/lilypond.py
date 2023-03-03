@@ -23,7 +23,7 @@ class Lilypond:
         """
 
         melody = self.convert(melody)
-        with open(LILYPOND_FILE_PATH, 'w') as file:
+        with open(LILYPOND_FILE_PATH, 'w', encoding='utf-8') as file:
             version = 'version "2.24.1"\n'
             version = version.replace('version', '\\version')
             score = 'score {'
@@ -58,6 +58,6 @@ class Lilypond:
         Returns:
             Melody in lilypond-syntax.
         """
-        for i in range(len(melody)):
-            melody[i] = self.notation[melody[i]]
+        for i, note in enumerate(melody):
+            melody[i] = self.notation[note]
         return melody

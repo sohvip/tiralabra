@@ -39,21 +39,21 @@ class Run:
             while song not in [1, 2]:
                 try:
                     song = int(input('choose a song for reference: '))
-                except:
+                except ValueError:
                     pass
         print()
         order = 0
         while order < 1:
             try:
                 order = int(input('markov chain order: '))
-            except:
+            except ValueError:
                 pass
         print()
         length = 0
         while length < order:
             try:
                 length = int(input('length of the melody: '))
-            except:
+            except ValueError:
                 pass
         print()
         input('press enter to GENERATE ')
