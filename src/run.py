@@ -2,7 +2,7 @@ from converter import Converter
 from trie import Trie
 from generator import Generator
 from lilypond import Lilypond
-from music_path import BOTW_FILE_PATH, AUTUMN_FILE_PATH
+from music_path import BOTW_FILE_PATH, AUTUMN_FILE_PATH, WII_FILE_PATH
 
 
 
@@ -34,9 +34,10 @@ class Run:
             print()
             print('[1] breath of the wild main theme')
             print('[2] autumn mountain')
+            print('[3] wii theme')
             print()
             song = 0
-            while song not in [1, 2]:
+            while song not in [1, 2, 3]:
                 try:
                     song = int(input('choose a song for reference: '))
                 except ValueError:
@@ -60,8 +61,10 @@ class Run:
         print()
         if song == 1:
             notes = self.converter.read_file(BOTW_FILE_PATH)
-        else:
+        elif song == 2:
             notes = self.converter.read_file(AUTUMN_FILE_PATH)
+        else:
+            notes = self.converter.read_file(WII_FILE_PATH)
         note_seq = self.converter.sequence_maker(notes, order)
         self.store(note_seq)
         generator = Generator(self.trie)
