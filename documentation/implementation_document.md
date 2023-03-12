@@ -6,8 +6,9 @@
 Searching and inserting algorithms in the trie data structure have the time complexity of O(n).  
 The space complexity is also O(n).
 
-### Suggestions For Improvement
+### Suggestions For Further Development
 - user can input their own reference music in predefined format
+- support for a wider range of notes
 - polyphonic generating
 - different note durations in generated music
 
