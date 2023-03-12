@@ -49,5 +49,5 @@ What it tests:
 - melody is correctly converted to lilypond syntax
   
 ## Test coverage
-![image](https://user-images.githubusercontent.com/95978191/221371233-e0ac451b-09fb-4d22-8c35-412ff5b6ab60.png)
+![image](https://user-images.githubusercontent.com/95978191/224540337-7d5b328e-87cb-49f4-851d-acdb2a9ded24.png)
 
