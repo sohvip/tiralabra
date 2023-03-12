@@ -45,8 +45,6 @@ class Trie:
                 return []
 
         for child in node.children:
-            # if not child:
-            #     return []
             notes.append(child)
             frequencies.append(node.children[child].frequency)
 
